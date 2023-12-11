@@ -1,0 +1,16 @@
+# Mac OS
+.DS_Store
+
+# Dart
+.dart_tool/
+.metadata
+*/**/pubspec.lock
+
+# Melos
+pubspec_overrides.yaml
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/

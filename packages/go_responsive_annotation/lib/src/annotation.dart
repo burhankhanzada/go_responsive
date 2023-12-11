@@ -1,0 +1,3 @@
+class GoResponsive {
+  const GoResponsive();
+}

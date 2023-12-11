@@ -1,0 +1,9 @@
+name: workspace
+
+ide:
+  intellij:
+    enabled: false
+
+packages:
+  - example
+  - packages/*

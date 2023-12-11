@@ -1,0 +1,17 @@
+# https://github.com/dart-lang/build/blob/master/docs/build_yaml_format.md
+# https://github.com/dart-lang/build/blob/master/build_config/README.md
+
+builders:
+  go_responsive_builder:
+    import: "package:go_responsive_generator/src/builder.dart"
+    builder_factories: ["goResponsiveBuilder"]
+    build_extensions: { ".dart": ["go_responsive.g.part"] }
+    auto_apply: dependents
+    build_to: source
+    # applies_builders: ["source_gen|combining_builder"]
+
+targets:
+  $default:
+    builders:
+      go_responsive_generator|go_responsive_builder:
+        enabled: true
