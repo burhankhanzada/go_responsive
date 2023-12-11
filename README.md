@@ -2,6 +2,8 @@
 
 A simple, easy but expressive responsive framework.
 
+![Preview](example/preview.gif)
+
 ## Features
 
 GoResponsive makes responsive design easy by:
