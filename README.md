@@ -171,11 +171,11 @@ dev_dependencies:
 
 [go_responsive_generator_pub]: https://pub.dartlang.org/packages/go_responsive_generator
 
-[go_responsive_badge]: https://img.shields.io/pub/v/go_responsive?logo=dart
+[go_responsive_badge]: https://img.shields.io/pub/v/go_responsive?logo=dart&color=blue
 
-[go_responsive_annotation_badge]: https://img.shields.io/pub/v/go_responsive_annotation?logo=dart
+[go_responsive_annotation_badge]: https://img.shields.io/pub/v/go_responsive_annotation?logo=dart&&color=blue
 
-[go_responsive_generator_badge]: https://img.shields.io/pub/v/go_responsive_generator?logo=dart
+[go_responsive_generator_badge]: https://img.shields.io/pub/v/go_responsive_generator?logo=dart&color=blue
 
 [contibution_url]: https://github.com/burhankhanzada/go_responsive/graphs/contributors
 [contibution_image]: https://contrib.rocks/image?repo=burhankhanzada/go_responsive
