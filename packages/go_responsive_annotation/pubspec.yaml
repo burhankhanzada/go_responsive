@@ -1,5 +1,5 @@
 name: go_responsive_annotation
-description: A package exposing annotations for go_responsive_generator.
+description: A package for exposing annotations which used by go_responsive_generator.
 version: 0.1.0
 homepage: https://pub.dev/packages/go_responsive
 repository: https://github.com/burhankhanzada/go_responsive
