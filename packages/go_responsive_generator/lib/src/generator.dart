@@ -6,6 +6,7 @@ import 'package:go_responsive_annotation/go_responsive_annotation.dart';
 import 'package:source_gen/source_gen.dart';
 
 import 'generate_build_context_extension.dart';
+import 'generate_strings.dart';
 import 'generate_widget.dart';
 
 class GoResponsiveGenerator extends GeneratorForAnnotation<GoResponsive> {
@@ -30,6 +31,8 @@ class GoResponsiveGenerator extends GeneratorForAnnotation<GoResponsive> {
         orderDirectives: true,
       );
 
+      final fields = generateBreakpointNameStrngFields(names);
+
       final widget = generateGoResponsiveWidget(names);
 
       final extension = generateGoResponsiveBuildContextExtensions(names);
@@ -37,6 +40,7 @@ class GoResponsiveGenerator extends GeneratorForAnnotation<GoResponsive> {
       final library = Library(
         (b) => b
           ..body.addAll([
+            ...fields,
             widget,
             extension,
           ]),

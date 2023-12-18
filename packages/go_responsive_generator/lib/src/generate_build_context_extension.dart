@@ -22,10 +22,10 @@ Method nameMethod(String name, String lastName, void Function(String name) callb
   final capitalizeName =
       name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
 
-  var condition = "between('$lastName', '$name')";
+  var condition = 'between($lastName, $name)';
 
   if (name == lastName) {
-    condition = "smallerOrEqualTo('$name')";
+    condition = 'smallerOrEqualTo($name)';
   }
 
   callback(name);
