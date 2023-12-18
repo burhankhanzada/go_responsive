@@ -1,6 +1,6 @@
 # GoResponsive [![MIT][mit_badge]][mit_link]
 
-A simple, easy but expressive responsive framework.
+A simple but expressive responsive framework inspired by [responsive_framework][responsive_framework] conitinal logics and context based responsive data & [responsive_builder][responsive_builder_pub] responsive widget with all supported breakpoint as parameters which will genrated by code generation.
 
 ![Preview](example/preview.gif)
 
@@ -8,8 +8,9 @@ A simple, easy but expressive responsive framework.
 
 GoResponsive makes responsive design easy by:
 
-- Generating `.is{breakpoint_name}` extension methods on BuildContext so can be used as condition
-- Generate `GoResponsiveWidget` with all defined breakpoint as optional parameters wit and a required defaultWidget paramter default behaviour if none brekpoint match size.
+
+- Generate `GoResponsiveWidget` with all defined breakpoint as optional parameters with and a required defaultWidget parameter.
+- Generating `.is{breakpoint_name}` extension methods on BuildContext so can be used with condition.
 - Generate `goResponsiveValue<T>` extension method on BuildContext so can be used set dynamic value.
 
 ## Getting started
@@ -40,9 +41,9 @@ dev_dependencies:
   ```dart
   @GoResponsive()
   const breakpoints = [
-    GoResponsiveBreakpoint(size: 600, name: 'small'),
+    GoResponsiveBreakpoint(size: 600, name: 'compact'),
     GoResponsiveBreakpoint(size: 840, name: 'medium'),
-    GoResponsiveBreakpoint(size: double.maxFinite, name: 'large'),
+    GoResponsiveBreakpoint(size: double.maxFinite, name: 'expanded'),
   ];
   ```
 
@@ -67,66 +68,9 @@ dev_dependencies:
   }
   ```
 
-- now run `dart run build_runner build` in console which will generate `main.g.dart`
+- now run `dart run build_runner build` in console which will generate `<file_name>.name.go_responsive.dart`
 
-  ```dart
-  class GoResponsiveWidget extends StatelessWidget {
-    const GoResponsiveWidget({
-      super.key,
-      required this.defaultWidget,
-      this.small,
-      this.medium,
-      this.large,
-    });
-
-    final Widget defaultWidget;
-
-    final Widget? small;
-
-    final Widget? medium;
-
-    final Widget? large;
-
-    @override
-    Widget build(BuildContext context) {
-      return context.goResponsiveValue(
-        small: small,
-        medium: medium,
-        large: large,
-        defaultValue: defaultWidget,
-      );
-    }
-  }
-
-  extension GoResponsiveBuildContextExtensions on BuildContext {
-    GoResponsiveData get goResponsiveData => GoResponsiveBuilder.of(this);
-    bool get isSmall => goResponsiveData.smallerOrEqualTo('small');
-    bool get isMedium => goResponsiveData.between('small', 'medium');
-    bool get isLarge => goResponsiveData.between('medium', 'large');
-    T goResponsiveValue<T>({
-      required T defaultValue,
-      T? small,
-      T? medium,
-      T? large,
-    }) {
-      if (isSmall) {
-        if (small != null) return small;
-      }
-
-      if (isMedium) {
-        if (medium != null) return medium;
-      }
-
-      if (isLarge) {
-        if (large != null) return large;
-      }
-
-      return defaultValue;
-    }
-  }
-  ```
-
-- then import `main.g.dart` in which `GoResponsiveWidget` is Defined and can be used like this:
+- then import `<file_name>.name.go_responsive.dart` in which `GoResponsiveWidget` is Defined and can be used like this:
 
   ```dart
   class Home extends StatelessWidget {
@@ -136,13 +80,13 @@ dev_dependencies:
     Widget build(BuildContext context) {
       return Scaffold(
         body: GoResponsiveWidget(
-          small: Container(
+          compact: Container(
             color: Colors.red,
           ),
           medium: Container(
             color: Colors.green,
           ),
-          large: Container(
+          expanded: Container(
             color: Colors.blue,
           ),
           defaultWidget: Container(
@@ -166,6 +110,10 @@ dev_dependencies:
 
 [mit_badge]: https://img.shields.io/badge/license-MIT-green.svg
 [mit_link]: https://opensource.org/licenses/MIT
+
+[responsive_framework]: https://pub.dev/packages/responsive_framework
+
+[responsive_builder_pub]: https://pub.dev/packages/responsive_builder
 
 [go_responsive_pub]: https://pub.dartlang.org/packages/go_responsive
 
