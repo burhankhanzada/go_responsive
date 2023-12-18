@@ -5,29 +5,33 @@ import 'package:go_responsive/go_responsive.dart';
 // GoResponsiveGenerator
 // **************************************************************************
 
+String compact = 'compact';
+String medium = 'medium';
+String expanded = 'expanded';
+
 class GoResponsiveWidget extends StatelessWidget {
   const GoResponsiveWidget({
     super.key,
     required this.defaultWidget,
-    this.small,
+    this.compact,
     this.medium,
-    this.large,
+    this.expanded,
   });
 
   final Widget defaultWidget;
 
-  final Widget? small;
+  final Widget? compact;
 
   final Widget? medium;
 
-  final Widget? large;
+  final Widget? expanded;
 
   @override
   Widget build(BuildContext context) {
     return context.goResponsiveValue(
-      small: small,
+      compact: compact,
       medium: medium,
-      large: large,
+      expanded: expanded,
       defaultValue: defaultWidget,
     );
   }
@@ -35,25 +39,25 @@ class GoResponsiveWidget extends StatelessWidget {
 
 extension GoResponsiveBuildContextExtensions on BuildContext {
   GoResponsiveData get goResponsiveData => GoResponsiveBuilder.of(this);
-  bool get isSmall => goResponsiveData.smallerOrEqualTo('small');
-  bool get isMedium => goResponsiveData.between('small', 'medium');
-  bool get isLarge => goResponsiveData.between('medium', 'large');
+  bool get isCompact => goResponsiveData.smallerOrEqualTo(compact);
+  bool get isMedium => goResponsiveData.between(compact, medium);
+  bool get isExpanded => goResponsiveData.between(medium, expanded);
   T goResponsiveValue<T>({
     required T defaultValue,
-    T? small,
+    T? compact,
     T? medium,
-    T? large,
+    T? expanded,
   }) {
-    if (isSmall) {
-      if (small != null) return small;
+    if (isCompact) {
+      if (compact != null) return compact;
     }
 
     if (isMedium) {
       if (medium != null) return medium;
     }
 
-    if (isLarge) {
-      if (large != null) return large;
+    if (isExpanded) {
+      if (expanded != null) return expanded;
     }
 
     return defaultValue;

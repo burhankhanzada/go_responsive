@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:go_responsive/go_responsive.dart';
 import 'package:go_responsive_annotation/go_responsive_annotation.dart';
 
-import 'main.g.dart';
+import 'main.go_responsive.dart';
 
 @GoResponsive()
 const breakpoints = [
-  GoResponsiveBreakpoint(size: 600, name: 'small'),
+  GoResponsiveBreakpoint(size: 600, name: 'compact'),
   GoResponsiveBreakpoint(size: 840, name: 'medium'),
-  GoResponsiveBreakpoint(size: double.maxFinite, name: 'large'),
+  GoResponsiveBreakpoint(size: double.maxFinite, name: 'expanded'),
 ];
 
 void main() {
@@ -45,13 +45,13 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GoResponsiveWidget(
-        small: Container(
+        compact: Container(
           color: Colors.red,
         ),
         medium: Container(
           color: Colors.green,
         ),
-        large: Container(
+        expanded: Container(
           color: Colors.blue,
         ),
         defaultWidget: Container(
