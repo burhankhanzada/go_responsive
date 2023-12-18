@@ -6,7 +6,7 @@ import 'package:go_responsive_annotation/go_responsive_annotation.dart';
 import 'package:source_gen/source_gen.dart';
 
 import 'generate_build_context_extension.dart';
-import 'generate_strings.dart';
+import 'generate_strings_fields.dart';
 import 'generate_widget.dart';
 
 class GoResponsiveGenerator extends GeneratorForAnnotation<GoResponsive> {

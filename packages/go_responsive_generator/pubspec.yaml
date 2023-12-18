@@ -11,9 +11,9 @@ environment:
 dependencies:
   analyzer: ^6.2.0
   build: ^2.4.1
-  built_collection: ^5.1.1
-  code_builder: ^4.8.0
   source_gen: ^1.4.0
+  code_builder: ^4.8.0
+  built_collection: ^5.1.1
   dart_style: ^2.3.4
   go_responsive_annotation: ^0.1.0
     
