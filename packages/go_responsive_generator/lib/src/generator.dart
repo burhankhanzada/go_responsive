@@ -5,11 +5,12 @@ import 'package:dart_style/dart_style.dart';
 import 'package:go_responsive_annotation/go_responsive_annotation.dart';
 import 'package:source_gen/source_gen.dart';
 
+import 'generate_breakpoints_class.dart';
 import 'generate_build_context_extension.dart';
-import 'generate_strings_fields.dart';
 import 'generate_widget.dart';
 
-class GoResponsiveGenerator extends GeneratorForAnnotation<GoResponsiveAnnotation> {
+class GoResponsiveGenerator
+    extends GeneratorForAnnotation<GoResponsiveAnnotation> {
   @override
   String generateForAnnotatedElement(
     Element element,
@@ -27,11 +28,9 @@ class GoResponsiveGenerator extends GeneratorForAnnotation<GoResponsiveAnnotatio
         names.add(name);
       }
 
-      final emitter = DartEmitter.scoped(
-        orderDirectives: true,
-      );
+      final emitter = DartEmitter.scoped(orderDirectives: true);
 
-      final fields = generateBreakpointNameStrngFields(names);
+      final goResponsiveClass = generateBreakpointsClass(names);
 
       final widget = generateGoResponsiveWidget(names);
 
@@ -40,7 +39,7 @@ class GoResponsiveGenerator extends GeneratorForAnnotation<GoResponsiveAnnotatio
       final library = Library(
         (b) => b
           ..body.addAll([
-            ...fields,
+            goResponsiveClass,
             widget,
             extension,
           ]),

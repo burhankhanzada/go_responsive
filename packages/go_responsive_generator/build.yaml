@@ -2,9 +2,11 @@ builders:
   go_responsive_builder:
     import: package:go_responsive_generator/go_responsive_generator.dart
     builder_factories: [goResponsiveBuilder]
-    build_extensions: { '.dart': [.go_responsive.dart] }
+    build_extensions: { '.dart': [.go_responsive.g.part] }
     auto_apply: dependents
-    build_to: source
+    build_to: cache
+    applies_builders: ["source_gen|combining_builder"]
+
 
 targets:
   $default:
@@ -12,5 +14,3 @@ targets:
     builders:
       go_responsive_generator|go_responsive_builder:
         enabled: true
-        generate_for: 
-          exclude:  [lib/firebase_options.dart]
