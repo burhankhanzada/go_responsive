@@ -1,3 +1,7 @@
+## 0.3.2
+
+ - **DOCS**: :memo: Update pubspec to correct homepage.
+
 ## 0.2.1
 
  - Readme update

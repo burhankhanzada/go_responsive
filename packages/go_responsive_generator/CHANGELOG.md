@@ -1,3 +1,7 @@
+## 0.3.2
+
+ - **FEAT**: :sparkles: Change generator To SharedPartBuilder to match other common code generators and improve over all code orgnizationa and clean up.
+
 ## 0.3.1
 
  - Readme update

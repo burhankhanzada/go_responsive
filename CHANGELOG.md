@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-12-20
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`go_responsive_annotation` - `v0.3.2`](#go_responsive_annotation---v032)
+ - [`go_responsive` - `v0.3.2`](#go_responsive---v032)
+ - [`go_responsive_generator` - `v0.3.2`](#go_responsive_generator---v032)
+
+---
+
+#### `go_responsive_annotation` - `v0.3.2`
+
+ - **DOCS**: :memo: Update pubspec to correct homepage.
+
+#### `go_responsive` - `v0.3.2`
+
+ - **FEAT**: :sparkles: Improve builder by adding assertions and hide unesssary memeber from data.
+
+#### `go_responsive_generator` - `v0.3.2`
+
+ - **FEAT**: :sparkles: Change generator To SharedPartBuilder to match other common code generators and improve over all code orgnizationa and clean up.
+
+
 ## 2023-12-19
 
 ### Changes
