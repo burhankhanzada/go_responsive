@@ -1,41 +1,30 @@
 import 'package:collection/collection.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 import 'breakpoint.dart';
 import 'data.dart';
 import 'inherited_data.dart';
 
+typedef GoResponsiveBuilderFunction = Widget Function(
+  BuildContext context,
+  GoResponsiveData data,
+  Widget? child,
+);
+
 class GoResponsiveBuilder extends StatefulWidget {
   const GoResponsiveBuilder({
     super.key,
+    this.child,
+    this.builder,
     required this.breakpoints,
-    required this.child,
   });
 
-  final Widget child;
+  final Widget? child;
+  final GoResponsiveBuilderFunction? builder;
   final List<GoResponsiveBreakpoint> breakpoints;
 
   @override
   State<GoResponsiveBuilder> createState() => GoResponsiveBuilderState();
-
-  static GoResponsiveData of(BuildContext context) {
-    final data =
-        context.dependOnInheritedWidgetOfExactType<InheritedGoResponsiveData>();
-    if (data != null) {
-      return data.data;
-    }
-    throw FlutterError.fromParts(
-      <DiagnosticsNode>[
-        ErrorSummary(
-          'GoResponsiveBuilder.of() called with a context that does not contain ResponsiveBuilder.',
-        ),
-        ErrorDescription(
-            'No GoResponsiveData ancestor could be found starting from the context that was passed '
-            'to GoResponsiveBuilder.of(). Place a GoResponsiveBuilder at the root of the app'),
-        context.describeElement('The context used was'),
-      ],
-    );
-  }
 }
 
 class GoResponsiveBuilderState extends State<GoResponsiveBuilder>
@@ -76,9 +65,20 @@ class GoResponsiveBuilderState extends State<GoResponsiveBuilder>
 
   @override
   Widget build(BuildContext context) {
+    final data = GoResponsiveData(
+      width: width,
+      breakpoint: breakpoint,
+      breakpoints: breakpoints,
+    );
+
     return InheritedGoResponsiveData(
-      data: GoResponsiveData.fromWidgetState(this),
-      child: widget.child,
+      data: data,
+      child: Builder(
+        builder: (context) {
+          return widget.builder?.call(context, data, widget.child) ??
+              widget.child!;
+        },
+      ),
     );
   }
 

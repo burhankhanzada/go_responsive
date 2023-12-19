@@ -1,5 +1,4 @@
 import 'breakpoint.dart';
-import 'builder.dart';
 
 class GoResponsiveData {
   const GoResponsiveData({
@@ -7,16 +6,6 @@ class GoResponsiveData {
     required this.breakpoint,
     required this.breakpoints,
   });
-
-  factory GoResponsiveData.fromWidgetState(
-    GoResponsiveBuilderState state,
-  ) {
-    return GoResponsiveData(
-      width: state.width,
-      breakpoint: state.breakpoint,
-      breakpoints: state.breakpoints,
-    );
-  }
 
   final double width;
   final GoResponsiveBreakpoint breakpoint;
