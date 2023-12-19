@@ -9,7 +9,7 @@ import 'generate_build_context_extension.dart';
 import 'generate_strings_fields.dart';
 import 'generate_widget.dart';
 
-class GoResponsiveGenerator extends GeneratorForAnnotation<GoResponsive> {
+class GoResponsiveGenerator extends GeneratorForAnnotation<GoResponsiveAnnotation> {
   @override
   String generateForAnnotatedElement(
     Element element,

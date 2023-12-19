@@ -47,7 +47,7 @@ Method goResponsiveData() {
       ..type = MethodType.getter
       ..name = 'goResponsiveData'
       ..returns = const Reference('GoResponsiveData')
-      ..body = const Code('GoResponsiveBuilder.of(this)'),
+      ..body = const Code('GoResponsive.of(this)'),
   );
 }
 
