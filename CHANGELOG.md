@@ -15,6 +15,41 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`go_responsive` - `v0.2.1`](#go_responsive---v021)
+ - [`go_responsive_annotation` - `v0.2.1`](#go_responsive_annotation---v021)
+ - [`go_responsive_generator` - `v0.3.1`](#go_responsive_generator---v031)
+
+---
+
+#### `go_responsive` - `v0.2.1`
+
+ - Readme update
+
+ - **FEAT**: :sparkles: Improve go responsive builder with add proper builder pattern with context and data and add GoResponsive.of method.
+ - **FEAT**: :sparkles: Change genrator extension and update eample.
+ - **DOCS**: :memo: Update pubspec descriptions to increase pub score.
+
+#### `go_responsive_annotation` - `v0.2.1`
+
+ - Readme update
+
+#### `go_responsive_generator` - `v0.3.1`
+
+ - Readme update
+
+
+## 2023-12-19
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`go_responsive` - `v0.2.0`](#go_responsive---v020)
  - [`go_responsive_annotation` - `v0.2.0`](#go_responsive_annotation---v020)
  - [`go_responsive_generator` - `v0.3.0`](#go_responsive_generator---v030)

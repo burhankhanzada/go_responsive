@@ -1,3 +1,7 @@
+## 0.3.1
+
+ - Readme update
+
 ## 0.3.0
 
  - **FIX**: :bug: Fix extension output, clean up and organize.

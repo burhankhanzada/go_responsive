@@ -1,3 +1,7 @@
+## 0.2.1
+
+ - Readme update
+
 ## 0.2.0
 
  - **FEAT**: :sparkles: Make annotation method version.
