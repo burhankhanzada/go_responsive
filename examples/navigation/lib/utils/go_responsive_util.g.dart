@@ -1,13 +1,18 @@
-import 'package:flutter/widgets.dart';
-import 'package:go_responsive/go_responsive.dart';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'go_responsive_util.dart';
 
 // **************************************************************************
 // GoResponsiveGenerator
 // **************************************************************************
 
-String compact = 'compact';
-String medium = 'medium';
-String expanded = 'expanded';
+class GoResponsiveBreakpoints {
+  static String compact = 'compact';
+
+  static String medium = 'medium';
+
+  static String expanded = 'expanded';
+}
 
 class GoResponsiveWidget extends StatelessWidget {
   const GoResponsiveWidget({
@@ -39,14 +44,21 @@ class GoResponsiveWidget extends StatelessWidget {
 
 extension GoResponsiveBuildContextExtensions on BuildContext {
   GoResponsiveData get goResponsiveData => GoResponsive.of(this);
-  bool get isCompact => goResponsiveData.smallerOrEqualTo(compact);
-  bool get isMedium => goResponsiveData.between(compact, medium);
-  bool get isExpanded => goResponsiveData.between(medium, expanded);
+  bool get isCompact =>
+      goResponsiveData.smallerOrEqualTo(GoResponsiveBreakpoints.compact);
+  bool get isMedium => goResponsiveData.between(
+        GoResponsiveBreakpoints.compact,
+        GoResponsiveBreakpoints.medium,
+      );
+  bool get isExpanded => goResponsiveData.between(
+        GoResponsiveBreakpoints.medium,
+        GoResponsiveBreakpoints.expanded,
+      );
   T goResponsiveValue<T>({
-    required T defaultValue,
     T? compact,
     T? medium,
     T? expanded,
+    required T defaultValue,
   }) {
     if (isCompact) {
       if (compact != null) return compact;
