@@ -2,7 +2,7 @@
 
 A simple but expressive responsive framework inspired by [responsive_framework][responsive_framework] conitinal logics and context based responsive data & [responsive_builder][responsive_builder_pub] responsive widget with all supported breakpoint as parameters which will genrated by code generation.
 
-![Preview](example/preview.gif)
+![Preview](examples/simple/preview.gif)
 
 ## Features
 
@@ -39,7 +39,7 @@ dev_dependencies:
 - Define breakepoints as top level list of `GoResponsiveBreakpoint` and annotate it with `@GoResponsive()`:
 
   ```dart
-  @GoResponsive()
+  @goResponsive
   const breakpoints = [
     GoResponsiveBreakpoint(size: 600, name: 'compact'),
     GoResponsiveBreakpoint(size: 840, name: 'medium'),
@@ -79,26 +79,18 @@ dev_dependencies:
     @override
     Widget build(BuildContext context) {
       return Scaffold(
-        body: GoResponsiveWidget(
-          compact: Container(
-            color: Colors.red,
-          ),
-          medium: Container(
-            color: Colors.green,
-          ),
-          expanded: Container(
-            color: Colors.blue,
-          ),
-          defaultWidget: Container(
-            color: Colors.black,
+        body: Container(
+          color: context.goResponsiveValue(
+            compact: Colors.red,
+            medium: Colors.green,
+            expanded: Colors.blue,
+            defaultValue: Colors.black,
           ),
         ),
       );
     }
   }
   ```
-
-> Please see example for complete understanding.
 
 ## My other packages
 
