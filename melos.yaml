@@ -5,5 +5,5 @@ ide:
     enabled: false
 
 packages:
-  - example
+  - examples/*
   - packages/*

@@ -1,9 +1,9 @@
-name: example
-description: A example to show usage of GoResponsive.
+name: simple_example
+description: A simple example to show usage of GoResponsive.
 publish_to: none
 
 environment:
-  sdk: '>=2.18.0 <4.0.0'
+  sdk: '>=3.2.3 <4.0.0'
   flutter: '>=1.17.0'
 
 dependencies:

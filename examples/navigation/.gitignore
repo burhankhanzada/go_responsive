@@ -41,11 +41,3 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-
-# Ignoring native folders of the example as they can be re-generated easily using:
-# flutter create --platforms=ios,web,macos,android,windows
-ios
-web
-macos
-android
-windows

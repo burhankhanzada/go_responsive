@@ -14,3 +14,12 @@ pubspec_overrides.yaml
 *.ipr
 *.iws
 .idea/
+
+# Ignoring native folders of the example as they can be re-generated easily using:
+# flutter create --platforms=ios,web,linux,macos,android,windows
+examples/**/ios
+examples/**/web
+examples/**/linux
+examples/**/macos
+examples/**/android
+examples/**/windows

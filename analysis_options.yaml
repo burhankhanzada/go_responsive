@@ -51,18 +51,17 @@ linter:
     # return, but that return is still complex enough that a "body" is worth it.
     prefer_expression_function_bodies: false
 
-
-    # Too verbose with little value, and this is taken care of by the Flutter 
+    # Too verbose with little value, and this is taken care of by the Flutter
     # devtool anyway.
     diagnostic_describe_all_properties: false
 
-    # Personal preference. I prefer "if (bool) return;" over having it in 
+    # Personal preference. I prefer "if (bool) return;" over having it in
     # multiple lines
     always_put_control_body_on_new_line: false
+
+    # False positive when using static members of class
+    avoid_classes_with_only_static_members: false
 
     # Conflicts with the convention used by flutter, which puts `Key key`
     # and `@required Widget child` last.
     always_put_required_named_parameters_first: false
-
-   
-

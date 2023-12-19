@@ -38,7 +38,7 @@ class GoResponsiveWidget extends StatelessWidget {
 }
 
 extension GoResponsiveBuildContextExtensions on BuildContext {
-  GoResponsiveData get goResponsiveData => GoResponsiveBuilder.of(this);
+  GoResponsiveData get goResponsiveData => GoResponsive.of(this);
   bool get isCompact => goResponsiveData.smallerOrEqualTo(compact);
   bool get isMedium => goResponsiveData.between(compact, medium);
   bool get isExpanded => goResponsiveData.between(medium, expanded);

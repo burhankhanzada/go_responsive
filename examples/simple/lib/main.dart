@@ -5,7 +5,7 @@ import 'package:go_responsive_annotation/go_responsive_annotation.dart';
 
 import 'main.go_responsive.dart';
 
-@GoResponsive()
+@goResponsive
 const breakpoints = [
   GoResponsiveBreakpoint(size: 600, name: 'compact'),
   GoResponsiveBreakpoint(size: 840, name: 'medium'),
@@ -15,7 +15,6 @@ const breakpoints = [
 void main() {
   runApp(
     DevicePreview(
-      enabled: false,
       builder: (context) => const App(),
     ),
   );
@@ -27,12 +26,11 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const Home(),
+      home: const Scaffold(
+        body: Home(),
+      ),
       builder: (context, child) {
-        return GoResponsiveBuilder(
-          breakpoints: breakpoints,
-          child: child!,
-        );
+        return const GoResponsiveBuilder(breakpoints: breakpoints);
       },
     );
   }
@@ -44,18 +42,12 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GoResponsiveWidget(
-        compact: Container(
-          color: Colors.red,
-        ),
-        medium: Container(
-          color: Colors.green,
-        ),
-        expanded: Container(
-          color: Colors.blue,
-        ),
-        defaultWidget: Container(
-          color: Colors.black,
+      body: Container(
+        color: context.goResponsiveValue(
+          compact: Colors.red,
+          medium: Colors.green,
+          expanded: Colors.blue,
+          defaultValue: Colors.black,
         ),
       ),
     );
