@@ -17,7 +17,7 @@ class GoResponsiveBuilder extends StatefulWidget {
     this.child,
     this.builder,
     required this.breakpoints,
-  });
+  }) : assert(child != null || builder != null, 'Set child or builder');
 
   final Widget? child;
   final GoResponsiveBuilderFunction? builder;
@@ -55,7 +55,7 @@ class GoResponsiveBuilderState extends State<GoResponsiveBuilder>
   @override
   void didUpdateWidget(GoResponsiveBuilder oldWidget) {
     super.didUpdateWidget(oldWidget);
-    // When [ResponsiveBreakpoints]'s constructor is
+    // When [GoResponsiveBuilder]'s constructor is
     // used directly in the widget tree and a parent
     // MediaQueryData changes, update state.
     // The screen dimensions are passed immediately.
