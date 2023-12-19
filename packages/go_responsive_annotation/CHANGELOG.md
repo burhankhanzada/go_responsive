@@ -1,3 +1,7 @@
+## 0.3.3
+
+ - Update readme
+
 ## 0.3.2
 
  - **DOCS**: :memo: Update pubspec to correct homepage.

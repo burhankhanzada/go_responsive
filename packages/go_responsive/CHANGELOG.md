@@ -1,3 +1,7 @@
+## 0.3.3
+
+ - Update readme
+
 ## 0.3.2
 
  - **FEAT**: :sparkles: Improve builder by adding assertions and hide unesssary memeber from data.

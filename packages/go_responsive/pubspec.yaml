@@ -2,7 +2,7 @@ name: go_responsive
 description: >
   A simple but expressive responsive framework inspired by
   responsive_framework & responsive_builder with code generation support.
-version: 0.3.2
+version: 0.3.3
 homepage: https://pub.dev/packages/go_responsive
 repository: https://github.com/burhankhanzada/go_responsive
 issue_tracker: https://github.com/burhankhanzada/go_responsive/issues
