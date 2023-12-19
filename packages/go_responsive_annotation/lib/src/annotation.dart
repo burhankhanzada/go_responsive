@@ -1,3 +1,5 @@
-class GoResponsive {
-  const GoResponsive();
+class GoResponsiveAnnotation {
+  const GoResponsiveAnnotation();
 }
+
+const Object goResponsive = GoResponsiveAnnotation();
