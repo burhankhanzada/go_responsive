@@ -1,1 +1,1 @@
-/Users/burhankhanzada/Projects/go_responsive/README.md
+../../README.md
