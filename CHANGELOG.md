@@ -15,6 +15,37 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`go_responsive` - `v0.3.3`](#go_responsive---v033)
+ - [`go_responsive_annotation` - `v0.3.3`](#go_responsive_annotation---v033)
+ - [`go_responsive_generator` - `v0.3.3`](#go_responsive_generator---v033)
+
+---
+
+#### `go_responsive` - `v0.3.3`
+
+ - Update readme
+
+#### `go_responsive_annotation` - `v0.3.3`
+
+ - Update readme
+
+#### `go_responsive_generator` - `v0.3.3`
+
+ - Update readme
+
+
+## 2023-12-20
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`go_responsive_annotation` - `v0.3.2`](#go_responsive_annotation---v032)
  - [`go_responsive` - `v0.3.2`](#go_responsive---v032)
  - [`go_responsive_generator` - `v0.3.2`](#go_responsive_generator---v032)
