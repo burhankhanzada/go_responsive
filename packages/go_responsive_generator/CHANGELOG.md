@@ -1,3 +1,7 @@
+## 0.3.4
+
+ - **FEAT**: Add isLandscape extension method to build context.
+
 ## 0.3.3
 
  - Update readme

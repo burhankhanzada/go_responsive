@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-12-25
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`go_responsive` - `v0.3.4`](#go_responsive---v034)
+ - [`go_responsive_generator` - `v0.3.4`](#go_responsive_generator---v034)
+
+---
+
+#### `go_responsive` - `v0.3.4`
+
+ - **FEAT**: Add orientation builder and fix between bug.
+
+#### `go_responsive_generator` - `v0.3.4`
+
+ - **FEAT**: Add isLandscape extension method to build context.
+
+
 ## 2023-12-20
 
 ### Changes

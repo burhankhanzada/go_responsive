@@ -1,6 +1,6 @@
 name: go_responsive_generator
 description: A code generator for go_responsive which generate useful widget, classe and build_context extension methods.
-version: 0.3.3
+version: 0.3.4
 homepage: https://pub.dev/packages/go_responsive_generator
 repository: https://github.com/burhankhanzada/go_responsive
 issue_tracker: https://github.com/burhankhanzada/go_responsive/issues

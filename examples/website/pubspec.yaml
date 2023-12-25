@@ -1,21 +1,22 @@
-name: simple_example
-description: A simple example to show usage of GoResponsive.
-publish_to: none
+name: website
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
 
 environment:
   sdk: '>=3.2.3 <4.0.0'
-  flutter: '>=1.17.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  device_preview: ^1.1.0
   go_responsive: ^0.3.4
   go_responsive_annotation: ^0.3.3
+  spaces2: ^1.0.1
 
 dev_dependencies:
   build_runner: ^2.4.7
   go_responsive_generator: ^0.3.4
+
 
 flutter:
   uses-material-design: true
