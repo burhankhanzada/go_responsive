@@ -34,6 +34,6 @@ class GoResponsiveData {
   }
 
   bool between(String start, String end) {
-    return largerThan(start) && smallerOrEqualTo(end);
+    return largerOrEqualTo(start) && smallerOrEqualTo(end);
   }
 }
