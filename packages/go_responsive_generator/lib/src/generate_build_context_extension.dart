@@ -5,9 +5,21 @@ Extension generateGoResponsiveBuildContextExtensions(List<String> names) {
     (b) => b
       ..name = 'GoResponsiveBuildContextExtensions'
       ..on = const Reference('BuildContext')
+      ..methods.add(_generateIsLandscapeMethod())
       ..methods.add(_generateGoResponsiveDataMethod())
       ..methods.addAll(_generateIsBreakpointNameMethods(names))
       ..methods.add(_generateGoResponsiveValueMethod(names)),
+  );
+}
+
+Method _generateIsLandscapeMethod() {
+  return Method(
+    (p0) => p0
+      ..lambda = true
+      ..type = MethodType.getter
+      ..name = 'isLandscape'
+      ..returns = const Reference('bool')
+      ..body = const Code('MediaQuery.of(this).orientation == Orientation.landscape'),
   );
 }
 
