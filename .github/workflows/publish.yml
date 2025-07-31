@@ -24,6 +24,6 @@ jobs:
         run: | 
           dart pub global activate melos
       - name: Publish
-        run: melos publish --no-dry-run
+        run: melos publish --no-dry-run -y
     # with:
     #   working-directory: path/to/package/within/repository
