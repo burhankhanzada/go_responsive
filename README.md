@@ -2,7 +2,9 @@
 
 A simple but expressive responsive framework inspired by [responsive_framework][responsive_framework] conitinal logics and context based responsive data & [responsive_builder][responsive_builder_pub] responsive widget with all supported breakpoint as parameters which will genrated by code generation.
 
-![Preview](assets/preview.gif)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/burhankhanzada/go_responsive/refs/heads/main/assets/preview.gif" alt="Preview" />
+</p>
 
 ## Features
 
