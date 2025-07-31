@@ -11,7 +11,6 @@ workspace:
   - packages/go_responsive_annotation
   - examples/navigation
   - examples/simple
-  - examples/website
 
 dev_dependencies:
   melos: ^7.0.0-dev.9
