@@ -1,9 +1,9 @@
 name: Publish to pub.dev
 
 on:
-  pull_request:
-    branches: [ main ]
-    types: [opened, synchronize, reopened, labeled, unlabeled]
+  push:
+    branches:
+    - main
 
 # Publish using the reusable workflow from dart-lang.
 jobs:
