@@ -2,8 +2,7 @@ name: Publish to pub.dev
 
 on:
   push:
-    branches:
-    - main
+    tags: [ '[0-9A-z]+-v[0-9]+.[0-9]+.[0-9]+' ]
 
 # Publish using the reusable workflow from dart-lang.
 jobs:
@@ -12,19 +11,4 @@ jobs:
     permissions:
       id-token: write # Required for authentication using OIDC
     
-    runs-on: ubuntu-latest
-    steps:
-      - name: Clone repository
-        uses: actions/checkout@v4
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          channel: stable
-      - name: Install dependencies
-        run: | 
-          dart pub global activate melos
-      - uses: flutter-actions/setup-pubdev-credentials@v1
-      - name: Publish
-        run: melos publish --no-dry-run -y
-    # with:
-    #   working-directory: path/to/package/within/repository
+    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
