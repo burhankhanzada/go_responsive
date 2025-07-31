@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2025-07-31
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`go_responsive` - `v0.4.0`](#go_responsive---v040)
+
+---
+
+#### `go_responsive` - `v0.4.0`
+
+ - Update dependencies
+
+
 ## 2023-12-25
 
 ### Changes

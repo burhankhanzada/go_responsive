@@ -1,3 +1,7 @@
+## 0.4.0
+
+ - Update dependencies
+
 ## 0.3.4
 
  - **FEAT**: Add orientation builder and fix between bug.
