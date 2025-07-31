@@ -23,6 +23,7 @@ jobs:
       - name: Install dependencies
         run: | 
           dart pub global activate melos
+      - uses: flutter-actions/setup-pubdev-credentials@v1
       - name: Publish
         run: melos publish --no-dry-run -y
     # with:
