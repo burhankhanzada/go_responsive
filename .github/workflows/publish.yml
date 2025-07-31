@@ -1,0 +1,24 @@
+name: Publish to pub.dev
+
+on:
+  push:
+    branches:
+    - main
+
+# Publish using the reusable workflow from dart-lang.
+jobs:
+  publish:
+    permissions:
+      id-token: write # Required for authentication using OIDC
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dart-lang/setup-dart@v1
+      - name: Install dependencies
+        run: | 
+          dart pub global activate melos
+          dart pub get
+      - name: Publish
+        run: melos publish
+    # with:
+    #   working-directory: path/to/package/within/repository
