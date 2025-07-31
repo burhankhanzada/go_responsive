@@ -1,7 +1,28 @@
 name: workspace
 
+publish_to: none
+
 environment:
-  sdk: '>=2.18.0'
-  
+  sdk: ^3.8.0
+
+workspace:
+  - packages/go_responsive
+  - packages/go_responsive_generator
+  - packages/go_responsive_annotation
+  - examples/navigation
+  - examples/simple
+  - examples/website
+
 dev_dependencies:
-  melos: ^3.4.0
+  melos: ^7.0.0-dev.9
+
+melos: 
+  name: workspace
+
+  ide:
+    intellij:
+      enabled: false
+
+  packages:
+    - examples/*
+    - packages/*

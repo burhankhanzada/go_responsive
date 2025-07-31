@@ -1,4 +1,4 @@
-import 'package:analyzer/dart/element/element.dart';
+import 'package:analyzer/dart/element/element2.dart';
 import 'package:build/build.dart';
 import 'package:code_builder/code_builder.dart';
 import 'package:dart_style/dart_style.dart';
@@ -13,13 +13,12 @@ class GoResponsiveGenerator
     extends GeneratorForAnnotation<GoResponsiveAnnotation> {
   @override
   String generateForAnnotatedElement(
-    Element element,
+    Element2 element,
     ConstantReader annotation,
     BuildStep buildStep,
   ) {
-    final names = <String>[];
-
-    if (element is TopLevelVariableElement) {
+    if (element is TopLevelVariableElement2) {
+      final names = <String>[];
       final dartObject = element.computeConstantValue();
       final dartObjectList = dartObject!.toListValue()!;
 
@@ -37,17 +36,14 @@ class GoResponsiveGenerator
       final extension = generateGoResponsiveBuildContextExtensions(names);
 
       final library = Library(
-        (b) => b
-          ..body.addAll([
-            goResponsiveClass,
-            widget,
-            extension,
-          ]),
+        (b) => b..body.addAll([goResponsiveClass, widget, extension]),
       );
 
       final stringSink = library.accept(emitter);
 
-      return DartFormatter().format(stringSink.toString());
+      return DartFormatter(
+        languageVersion: DartFormatter.latestLanguageVersion,
+      ).format(stringSink.toString());
     }
 
     return '// Generated Comment';

@@ -66,7 +66,7 @@ Method _generateBuildMethod(List<String> names) {
   final nameString = StringBuffer();
 
   for (final name in names) {
-    nameString.writeln('$name: $name,');
+    nameString.write('$name: $name,');
   }
 
   return Method(

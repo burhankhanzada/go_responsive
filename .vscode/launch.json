@@ -5,14 +5,14 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "navigation_example",
-      "cwd": "examples/navigation",
+      "name": "simple_example",
+      "cwd": "examples/simple",
       "request": "launch",
       "type": "dart"
     },
     {
-      "name": "simple_example",
-      "cwd": "examples/simple",
+      "name": "navigation_example",
+      "cwd": "examples/navigation",
       "request": "launch",
       "type": "dart"
     },

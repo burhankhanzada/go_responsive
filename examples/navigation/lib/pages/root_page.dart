@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:spaces2/spaces2.dart';
 
 import '../utils/go_responsive_util.dart';
 import '../utils/routes_util.dart';
@@ -31,8 +30,8 @@ class RootPage extends StatelessWidget {
   Widget _buidlMediumExpanded() {
     return Scaffold(
       backgroundColor: Colors.grey.shade300,
-      body: SpacedRow(
-        padding: const EdgeInsets.all(16),
+      body: Row(
+        spacing: 16,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(

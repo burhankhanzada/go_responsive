@@ -5,5 +5,7 @@ homepage: https://pub.dev/packages/go_responsive_annotation
 repository: https://github.com/burhankhanzada/go_responsive
 issue_tracker: https://github.com/burhankhanzada/go_responsive/issues
 
+resolution: workspace
+
 environment:
-  sdk: '>=2.18.0 <4.0.0'
+  sdk: ^3.8.0

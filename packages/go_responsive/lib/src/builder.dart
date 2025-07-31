@@ -23,6 +23,16 @@ class GoResponsiveBuilder extends StatefulWidget {
   final GoResponsiveBuilderFunction? builder;
   final List<GoResponsiveBreakpoint> breakpoints;
 
+  static GoResponsiveData of(BuildContext context) {
+    final data = InheritedGoResponsiveData.of(context);
+
+    return GoResponsiveData(
+      width: data.width,
+      breakpoint: data.breakpoint,
+      breakpoints: [],
+    );
+  }
+
   @override
   State<GoResponsiveBuilder> createState() => GoResponsiveBuilderState();
 }
@@ -53,12 +63,15 @@ class GoResponsiveBuilderState extends State<GoResponsiveBuilder>
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    setBreakpoint();
+    setState(() {});
+  }
+
+  @override
   void didUpdateWidget(GoResponsiveBuilder oldWidget) {
     super.didUpdateWidget(oldWidget);
-    // When [GoResponsiveBuilder]'s constructor is
-    // used directly in the widget tree and a parent
-    // MediaQueryData changes, update state.
-    // The screen dimensions are passed immediately.
     setBreakpoint();
     setState(() {});
   }

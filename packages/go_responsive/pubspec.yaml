@@ -7,14 +7,14 @@ homepage: https://pub.dev/packages/go_responsive
 repository: https://github.com/burhankhanzada/go_responsive
 issue_tracker: https://github.com/burhankhanzada/go_responsive/issues
 
-environment:
-  sdk: '>=2.18.0 <4.0.0'
-  flutter: '>=1.17.0'
+resolution: workspace
 
+environment:
+  sdk: ^3.8.0
 dependencies:
   flutter:
     sdk: flutter
-  collection: ^1.18.0
+  collection: ^1.19.1
 
 dev_dependencies:
-  flutter_lints: ^3.0.1
+  flutter_lints: ^6.0.0
