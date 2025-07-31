@@ -17,7 +17,7 @@ jobs:
       - name: Install dependencies
         run: | 
           dart pub global activate melos
-          dart pub get
+          flutter pub get
       - name: Publish
         run: melos publish
     # with:
