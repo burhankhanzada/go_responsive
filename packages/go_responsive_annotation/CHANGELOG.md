@@ -1,3 +1,7 @@
+## 0.4.0
+
+ - Update depencies
+
 ## 0.3.3
 
  - Update readme
