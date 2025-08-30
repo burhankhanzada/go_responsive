@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2025-08-30
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`go_responsive` - `v0.4.2`](#go_responsive---v042)
+ - [`go_responsive_annotation` - `v0.4.2`](#go_responsive_annotation---v042)
+ - [`go_responsive_generator` - `v0.4.2`](#go_responsive_generator---v042)
+
+---
+
+#### `go_responsive` - `v0.4.2`
+
+ - **FIX**: Update depencies and code according to it.
+
+#### `go_responsive_annotation` - `v0.4.2`
+
+ - Bump "go_responsive_annotation" to `0.4.2`.
+
+#### `go_responsive_generator` - `v0.4.2`
+
+ - **FIX**: Update depencies and code according to it.
+
+
 ## 2025-07-31
 
 ### Changes

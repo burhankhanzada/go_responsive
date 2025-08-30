@@ -1,3 +1,7 @@
+## 0.4.2
+
+ - Bump "go_responsive_annotation" to `0.4.2`.
+
 ## 0.4.1
 
  - Update preview
