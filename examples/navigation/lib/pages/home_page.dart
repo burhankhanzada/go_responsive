@@ -10,6 +10,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Column(
+          spacing: 16,
           mainAxisSize: MainAxisSize.min,
           children: [
             const Text('Home'),

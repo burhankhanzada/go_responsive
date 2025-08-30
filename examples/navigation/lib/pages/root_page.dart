@@ -18,7 +18,7 @@ class RootPage extends StatelessWidget {
 
   Widget _buidlCompact() {
     return NavigatorPopHandler(
-      onPop: () => navigatorKey.currentState!.pop(),
+      onPopWithResult: (result) => navigatorKey.currentState!.pop(),
       child: Navigator(
         key: navigatorKey,
         initialRoute: RoutesUtil.home,
@@ -56,7 +56,7 @@ class RootPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16),
               ),
               child: NavigatorPopHandler(
-                onPop: () => navigatorKey.currentState!.pop(),
+                onPopWithResult: (result) => navigatorKey.currentState!.pop(),
                 child: Navigator(
                   key: navigatorKey,
                   initialRoute: RoutesUtil.home,

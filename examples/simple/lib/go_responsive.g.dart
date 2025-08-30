@@ -45,17 +45,22 @@ class GoResponsiveWidget extends StatelessWidget {
 extension GoResponsiveBuildContextExtensions on BuildContext {
   bool get isLandscape =>
       MediaQuery.of(this).orientation == Orientation.landscape;
+
   GoResponsiveData get goResponsiveData => GoResponsive.of(this);
+
   bool get isCompact =>
       goResponsiveData.smallerOrEqualTo(GoResponsiveBreakpoints.compact);
+
   bool get isMedium => goResponsiveData.between(
     GoResponsiveBreakpoints.compact,
     GoResponsiveBreakpoints.medium,
   );
+
   bool get isExpanded => goResponsiveData.between(
     GoResponsiveBreakpoints.medium,
     GoResponsiveBreakpoints.expanded,
   );
+
   T goResponsiveValue<T>({
     T? compact,
     T? medium,
