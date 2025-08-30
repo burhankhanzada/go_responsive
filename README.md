@@ -1,6 +1,6 @@
 # GoResponsive [![MIT][mit_badge]][mit_link]
 
-A simple but expressive responsive framework inspired by [responsive_framework][responsive_framework] conitinal logics and context based responsive data & [responsive_builder][responsive_builder_pub] responsive widget with all supported breakpoint as parameters which will genrated by code generation.
+A simple but expressive responsive framework inspired by [responsive_framework][responsive_framework] conditional logics and context based responsive data & [responsive_builder][responsive_builder_pub] responsive widget with all supported breakpoint as parameters which will genrated by code generation.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/burhankhanzada/go_responsive/refs/heads/main/assets/preview.gif" alt="Preview" />
@@ -9,7 +9,6 @@ A simple but expressive responsive framework inspired by [responsive_framework][
 ## Features
 
 GoResponsive makes responsive design easy by:
-
 
 - Generate `GoResponsiveWidget` with all defined breakpoint as optional parameters with and a required defaultWidget parameter.
 - Generate `context.goResponsiveValue<T>` extension method on BuildContext so can be used set typed value.
@@ -38,7 +37,6 @@ dev_dependencies:
 ```
 
 ## Uasage
-
 
 - Define `go_responsive.dart`:
 
@@ -121,6 +119,7 @@ dev_dependencies:
     }
   }
   ```
+
 - or use `context.is{breakpoint_name}` with if else
 
   ```dart
@@ -187,7 +186,7 @@ dev_dependencies:
   }
   ```
 
-## Conditions 
+## Conditions
 
 - `equals`
 - `between`
@@ -199,7 +198,6 @@ dev_dependencies:
 ## Tips
 
 - Add `**/**/.g.dart` in `.gitgonre` to ignore all generated dart files
-
 
 ## My other packages
 
