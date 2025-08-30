@@ -1,4 +1,4 @@
-import 'package:analyzer/dart/element/element2.dart';
+import 'package:analyzer/dart/element/element.dart';
 import 'package:build/build.dart';
 import 'package:code_builder/code_builder.dart';
 import 'package:dart_style/dart_style.dart';
@@ -13,11 +13,11 @@ class GoResponsiveGenerator
     extends GeneratorForAnnotation<GoResponsiveAnnotation> {
   @override
   String generateForAnnotatedElement(
-    Element2 element,
+    Element element,
     ConstantReader annotation,
     BuildStep buildStep,
   ) {
-    if (element is TopLevelVariableElement2) {
+    if (element is TopLevelVariableElement) {
       final names = <String>[];
       final dartObject = element.computeConstantValue();
       final dartObjectList = dartObject!.toListValue()!;

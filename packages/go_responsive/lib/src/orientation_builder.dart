@@ -3,12 +3,12 @@ import 'package:flutter/widgets.dart';
 class GoResponsiveOrientationBuilder extends StatelessWidget {
   const GoResponsiveOrientationBuilder({
     super.key,
-    required this.landscape,
     required this.portrait,
+    required this.landscape,
   });
 
-  final Widget landscape;
   final Widget portrait;
+  final Widget landscape;
 
   @override
   Widget build(BuildContext context) {

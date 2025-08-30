@@ -7,10 +7,10 @@ environment:
 
 workspace:
   - packages/go_responsive
-  - packages/go_responsive_generator
   - packages/go_responsive_annotation
-  - examples/navigation
+  - packages/go_responsive_generator
   - examples/simple
+  - examples/navigation
 
 dev_dependencies:
   melos: ^7.0.0-dev.9
