@@ -1,3 +1,7 @@
+## 0.4.3
+
+ - Update dependencies
+
 ## 0.4.2
 
  - **FIX**: Update depencies and code according to it.
