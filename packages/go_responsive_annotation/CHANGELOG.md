@@ -1,3 +1,7 @@
+## 0.4.4
+
+ - Bump "go_responsive_annotation" to `0.4.4`.
+
 ## 0.4.3
 
  - Update dependencies

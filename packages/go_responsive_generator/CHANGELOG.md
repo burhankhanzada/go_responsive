@@ -1,3 +1,7 @@
+## 0.4.4
+
+ - **FIX**: Update analyzer to 8.2.0.
+
 ## 0.4.3
 
  - Update dependencies

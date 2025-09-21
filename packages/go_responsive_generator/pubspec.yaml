@@ -1,6 +1,6 @@
 name: go_responsive_generator
 description: A code generator for go_responsive which generate useful widget, classe and build_context extension methods.
-version: 0.4.3
+version: 0.4.4
 homepage: https://pub.dev/packages/go_responsive_generator
 repository: https://github.com/burhankhanzada/go_responsive
 issue_tracker: https://github.com/burhankhanzada/go_responsive/issues
@@ -16,7 +16,7 @@ dependencies:
   source_gen: ^4.0.1
   code_builder: ^4.11.0
   dart_style: ^3.1.2
-  go_responsive_annotation: ^0.4.3
+  go_responsive_annotation: ^0.4.4
     
 dev_dependencies:
   lints: ^6.0.0
