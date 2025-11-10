@@ -43,23 +43,7 @@ class GoResponsiveWidget extends StatelessWidget {
 }
 
 extension GoResponsiveBuildContextExtensions on BuildContext {
-  bool get isLandscape =>
-      MediaQuery.of(this).orientation == Orientation.landscape;
-
   GoResponsiveData get goResponsiveData => GoResponsive.of(this);
-
-  bool get isCompact =>
-      goResponsiveData.smallerOrEqualTo(GoResponsiveBreakpoints.compact);
-
-  bool get isMedium => goResponsiveData.between(
-    GoResponsiveBreakpoints.compact,
-    GoResponsiveBreakpoints.medium,
-  );
-
-  bool get isExpanded => goResponsiveData.between(
-    GoResponsiveBreakpoints.medium,
-    GoResponsiveBreakpoints.expanded,
-  );
 
   T goResponsiveValue<T>({
     T? compact,
@@ -81,4 +65,59 @@ extension GoResponsiveBuildContextExtensions on BuildContext {
 
     return defaultValue;
   }
+
+  bool get isPortrait =>
+      MediaQuery.of(this).orientation == Orientation.portrait;
+
+  bool get isLandscape =>
+      MediaQuery.of(this).orientation == Orientation.landscape;
+
+  bool get isCompact =>
+      goResponsiveData.smallerOrEqualTo(GoResponsiveBreakpoints.compact);
+
+  bool get isMedium => goResponsiveData.between(
+    GoResponsiveBreakpoints.compact,
+    GoResponsiveBreakpoints.medium,
+  );
+
+  bool get isExpanded => goResponsiveData.between(
+    GoResponsiveBreakpoints.medium,
+    GoResponsiveBreakpoints.expanded,
+  );
+
+  bool get isLargerThanCompact =>
+      goResponsiveData.largerThan(GoResponsiveBreakpoints.compact);
+
+  bool get isSmallerThanCompact =>
+      goResponsiveData.smallerThan(GoResponsiveBreakpoints.compact);
+
+  bool get isLargerOrEqualToCompact =>
+      goResponsiveData.largerOrEqualTo(GoResponsiveBreakpoints.compact);
+
+  bool get isSmallerOrEqualToCompact =>
+      goResponsiveData.smallerOrEqualTo(GoResponsiveBreakpoints.compact);
+
+  bool get isLargerThanMedium =>
+      goResponsiveData.largerThan(GoResponsiveBreakpoints.medium);
+
+  bool get isSmallerThanMedium =>
+      goResponsiveData.smallerThan(GoResponsiveBreakpoints.medium);
+
+  bool get isLargerOrEqualToMedium =>
+      goResponsiveData.largerOrEqualTo(GoResponsiveBreakpoints.medium);
+
+  bool get isSmallerOrEqualToMedium =>
+      goResponsiveData.smallerOrEqualTo(GoResponsiveBreakpoints.medium);
+
+  bool get isLargerThanExpanded =>
+      goResponsiveData.largerThan(GoResponsiveBreakpoints.expanded);
+
+  bool get isSmallerThanExpanded =>
+      goResponsiveData.smallerThan(GoResponsiveBreakpoints.expanded);
+
+  bool get isLargerOrEqualToExpanded =>
+      goResponsiveData.largerOrEqualTo(GoResponsiveBreakpoints.expanded);
+
+  bool get isSmallerOrEqualToExpanded =>
+      goResponsiveData.smallerOrEqualTo(GoResponsiveBreakpoints.expanded);
 }

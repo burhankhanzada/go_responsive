@@ -7,11 +7,7 @@ import 'package:go_responsive/go_responsive.dart';
 import 'go_responsive.dart';
 
 void main() {
-  runApp(
-    DevicePreview(
-      builder: (context) => const App(),
-    ),
-  );
+  runApp(DevicePreview(builder: (context) => const App()));
 }
 
 class App extends StatelessWidget {
@@ -22,10 +18,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       home: const Home(),
       builder: (context, child) {
-        return GoResponsiveBuilder(
-          breakpoints: breakpoints,
-          child: child,
-        );
+        return GoResponsiveBuilder(breakpoints: breakpoints, child: child);
       },
     );
   }
@@ -36,6 +29,8 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(context.isLargerThanCompact);
+
     return Scaffold(
       body: Container(
         color: context.goResponsiveValue(
@@ -84,9 +79,7 @@ class Home3 extends StatelessWidget {
       color = Colors.blue;
     }
 
-    return Scaffold(
-      body: Container(color: color),
-    );
+    return Scaffold(body: Container(color: color));
   }
 }
 
@@ -97,8 +90,9 @@ class Home4 extends StatelessWidget {
   Widget build(BuildContext context) {
     var color = Colors.black;
 
-    if (context.goResponsiveData
-        .smallerOrEqualTo(GoResponsiveBreakpoints.compact)) {
+    if (context.goResponsiveData.smallerOrEqualTo(
+      GoResponsiveBreakpoints.compact,
+    )) {
       color = Colors.red;
     }
 
@@ -116,8 +110,6 @@ class Home4 extends StatelessWidget {
       color = Colors.blue;
     }
 
-    return Scaffold(
-      body: Container(color: color),
-    );
+    return Scaffold(body: Container(color: color));
   }
 }
