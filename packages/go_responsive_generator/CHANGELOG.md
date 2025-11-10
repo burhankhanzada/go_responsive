@@ -1,3 +1,9 @@
+## 0.5.0
+
+ - Add more build context getters and udpate dependencies
+
+ - **FEAT**: Add more build context getters.
+
 ## 0.4.4
 
  - **FIX**: Update analyzer to 8.2.0.

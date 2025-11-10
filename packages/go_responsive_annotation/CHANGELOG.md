@@ -1,3 +1,7 @@
+## 0.5.0
+
+ - Add more build context getters and udpate dependencies
+
 ## 0.4.4
 
  - Bump "go_responsive_annotation" to `0.4.4`.

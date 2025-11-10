@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2025-11-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`go_responsive` - `v0.5.0`](#go_responsive---v050)
+ - [`go_responsive_annotation` - `v0.5.0`](#go_responsive_annotation---v050)
+ - [`go_responsive_generator` - `v0.5.0`](#go_responsive_generator---v050)
+
+---
+
+#### `go_responsive` - `v0.5.0`
+
+ - Add more build context getters and udpate dependencies
+
+#### `go_responsive_annotation` - `v0.5.0`
+
+ - Add more build context getters and udpate dependencies
+
+#### `go_responsive_generator` - `v0.5.0`
+
+ - Add more build context getters and udpate dependencies
+
+ - **FEAT**: Add more build context getters.
+
+
 ## 2025-09-21
 
 ### Changes
