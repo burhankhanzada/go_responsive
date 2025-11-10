@@ -13,7 +13,7 @@ workspace:
   - examples/navigation
 
 dev_dependencies:
-  melos: ^7.0.0-dev.9
+  melos: ^7.3.0
 
 melos: 
   name: workspace
