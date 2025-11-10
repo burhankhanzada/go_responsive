@@ -2,30 +2,47 @@ import 'package:code_builder/code_builder.dart';
 
 Extension generateGoResponsiveBuildContextExtensions(List<String> names) {
   return Extension(
-    (b) => b
+    (builder) => builder
       ..name = 'GoResponsiveBuildContextExtensions'
       ..on = const Reference('BuildContext')
-      ..methods.add(_generateIsLandscapeMethod())
       ..methods.add(_generateGoResponsiveDataMethod())
+      ..methods.add(_generateGoResponsiveValueMethod(names))
+      ..methods.add(_generateIsPortraitMethod())
+      ..methods.add(_generateIsLandscapeMethod())
       ..methods.addAll(_generateIsBreakpointNameMethods(names))
-      ..methods.add(_generateGoResponsiveValueMethod(names)),
+      ..methods.addAll(_generateIsConditionBreakpointNameMethods(names)),
+  );
+}
+
+Method _generateIsPortraitMethod() {
+  return Method(
+    (builder) => builder
+      ..lambda = true
+      ..type = MethodType.getter
+      ..name = 'isPortrait'
+      ..returns = const Reference('bool')
+      ..body = const Code(
+        'MediaQuery.of(this).orientation == Orientation.portrait',
+      ),
   );
 }
 
 Method _generateIsLandscapeMethod() {
   return Method(
-    (p0) => p0
+    (builder) => builder
       ..lambda = true
       ..type = MethodType.getter
       ..name = 'isLandscape'
       ..returns = const Reference('bool')
-      ..body = const Code('MediaQuery.of(this).orientation == Orientation.landscape'),
+      ..body = const Code(
+        'MediaQuery.of(this).orientation == Orientation.landscape',
+      ),
   );
 }
 
 Method _generateGoResponsiveDataMethod() {
   return Method(
-    (p0) => p0
+    (builder) => builder
       ..lambda = true
       ..type = MethodType.getter
       ..name = 'goResponsiveData'
@@ -39,8 +56,8 @@ List<Method> _generateIsBreakpointNameMethods(List<String> names) {
 
   return names
       .map(
-        (e) => _generateIsBreakpointNameMethod(
-          e,
+        (name) => _generateIsBreakpointNameMethod(
+          name,
           lastName,
           (name) => lastName = name,
         ),
@@ -66,7 +83,7 @@ Method _generateIsBreakpointNameMethod(
       name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
 
   return Method(
-    (p0) => p0
+    (builder) => builder
       ..lambda = true
       ..type = MethodType.getter
       ..name = 'is$capitalizeName'
@@ -92,14 +109,14 @@ Method _generateGoResponsiveValueMethod(List<String> names) {
   final parameters = [
     ...names.map((e) {
       return Parameter(
-        (p0) => p0
+        (builder) => builder
           ..named = true
           ..type = const Reference('T?')
           ..name = e,
       );
     }),
     Parameter(
-      (p0) => p0
+      (builder) => builder
         ..named = true
         ..required = true
         ..type = const Reference('T')
@@ -108,7 +125,7 @@ Method _generateGoResponsiveValueMethod(List<String> names) {
   ];
 
   return Method(
-    (p0) => p0
+    (builder) => builder
       ..name = 'goResponsiveValue'
       ..types.add(const Reference('T'))
       ..returns = const Reference('T')
@@ -117,5 +134,84 @@ Method _generateGoResponsiveValueMethod(List<String> names) {
         $nameString
         return defaultValue;
       '''),
+  );
+}
+
+List<Method> _generateIsConditionBreakpointNameMethods(List<String> names) {
+  final methodsList = <Method>[];
+
+  for (final name in names) {
+    methodsList.addAll([
+      _generateIsLargerThanBreakpointNameMethod(name),
+      _generateIsSmallerThanBreakpointNameMethod(name),
+      _generateIsLargerOrEqualToBreakpointNameMethod(name),
+      _generateIsSmallerOrEqualToBreakpointNameMethod(name),
+    ]);
+  }
+
+  return methodsList;
+}
+
+Method _generateIsLargerThanBreakpointNameMethod(String name) {
+  final condition = 'largerThan(GoResponsiveBreakpoints.$name)';
+
+  final capitalizeName =
+      name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
+
+  return Method(
+    (builder) => builder
+      ..lambda = true
+      ..type = MethodType.getter
+      ..name = 'isLargerThan$capitalizeName'
+      ..returns = const Reference('bool')
+      ..body = Code('goResponsiveData.$condition'),
+  );
+}
+
+Method _generateIsSmallerThanBreakpointNameMethod(String name) {
+  final condition = 'smallerThan(GoResponsiveBreakpoints.$name)';
+
+  final capitalizeName =
+      name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
+
+  return Method(
+    (builder) => builder
+      ..lambda = true
+      ..type = MethodType.getter
+      ..name = 'isSmallerThan$capitalizeName'
+      ..returns = const Reference('bool')
+      ..body = Code('goResponsiveData.$condition'),
+  );
+}
+
+Method _generateIsLargerOrEqualToBreakpointNameMethod(String name) {
+  final condition = 'largerOrEqualTo(GoResponsiveBreakpoints.$name)';
+
+  final capitalizeName =
+      name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
+
+  return Method(
+    (builder) => builder
+      ..lambda = true
+      ..type = MethodType.getter
+      ..name = 'isLargerOrEqualTo$capitalizeName'
+      ..returns = const Reference('bool')
+      ..body = Code('goResponsiveData.$condition'),
+  );
+}
+
+Method _generateIsSmallerOrEqualToBreakpointNameMethod(String name) {
+  final condition = 'smallerOrEqualTo(GoResponsiveBreakpoints.$name)';
+
+  final capitalizeName =
+      name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
+
+  return Method(
+    (builder) => builder
+      ..lambda = true
+      ..type = MethodType.getter
+      ..name = 'isSmallerOrEqualTo$capitalizeName'
+      ..returns = const Reference('bool')
+      ..body = Code('goResponsiveData.$condition'),
   );
 }
